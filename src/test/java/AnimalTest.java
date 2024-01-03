@@ -3,10 +3,16 @@ import com.company.Cat;
 import com.company.Dog;
 import com.company.Pig;
 import static  org.junit.Assert.assertEquals;
+
+import org.junit.Before;
 import org.junit.Test;
 
 
 public class AnimalTest {
+    @Before
+    public void init(){
+        System.out.println("Running in browser " + System.getProperty("browser"));
+    }
 
     @Test
     public void testDog() {
