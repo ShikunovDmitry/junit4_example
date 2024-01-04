@@ -12,6 +12,7 @@ public class AnimalTest {
     @Before
     public void init(){
         System.out.println("Running in browser " + System.getProperty("browser"));
+        System.out.println("Running on environment " + System.getProperty("env"));
     }
 
     @Test
