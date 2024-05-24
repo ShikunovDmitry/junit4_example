@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    command: ["java", "-jar", "app.jar"]
+  tests:
+    image: maven:3.8.4-openjdk-11-slim
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: ["mvn", "test"]
