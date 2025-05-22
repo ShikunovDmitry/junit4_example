@@ -15,6 +15,8 @@ public class AnimalTest {
         System.out.println("Password " + Configuration.getProperties().get("password"));
         System.out.println("Running in browser " + Configuration.getProperties().get("browser"));
         System.out.println("Running on environment " + Configuration.getProperties().get("env"));
+        System.out.println(System.getProperty("browser"));
+        System.out.println(System.getProperty("env"));
     }
 
     @Test
