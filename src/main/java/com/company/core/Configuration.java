@@ -31,9 +31,9 @@ public class Configuration {
             if(new File("local.properties").exists()){
                 localProperties.load(new FileInputStream("local.properties"));
                 properties.putAll(localProperties);
-                properties.putAll(System.getenv());
-                properties.putAll(System.getProperties());
             }
+            properties.putAll(System.getenv());
+            properties.putAll(System.getProperties());
         } catch (IOException e) {
             System.out.println("Can't read properties");
         }
