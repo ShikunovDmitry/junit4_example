@@ -4,9 +4,11 @@ pipeline {
         maven 'maven3' 
     }
     stages {
-        stage('Build') { 
-            steps {
-                bat "mvn clean test -Dbrowser=${params.browser} -Denv=${params.env}" 
+        stage('Build') {
+           withCredentials([usernameColonPassword(credentialsId: 'c8db736f-2fad-4f6c-8c69-7daf820b2f9a', variable: 'USERPASS')]) {
+                steps {
+                    bat "mvn clean test -Dbrowser=${params.browser} -Denv=${params.env} -Dpassword=${USERPASS}"
+                }
             }
         }
     }
