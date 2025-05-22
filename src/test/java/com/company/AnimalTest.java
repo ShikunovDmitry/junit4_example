@@ -1,20 +1,20 @@
 package com.company;
 
-import com.company.Animal;
-import com.company.Cat;
-import com.company.Dog;
-import com.company.Pig;
 import static  org.junit.Assert.assertEquals;
 
+import com.company.core.Configuration;
 import org.junit.Before;
 import org.junit.Test;
 
 
+//@Log4j
 public class AnimalTest {
     @Before
     public void init(){
-        System.out.println("Running in browser " + System.getProperty("browser"));
-        System.out.println("Running on environment " + System.getProperty("env"));
+        Configuration.getProperties();
+        System.out.println("Password " + Configuration.getProperties().get("password"));
+        System.out.println("Running in browser " + Configuration.getProperties().get("browser"));
+        System.out.println("Running on environment " + Configuration.getProperties().get("env"));
     }
 
     @Test
