@@ -3,13 +3,14 @@ pipeline {
      tools { 
         maven 'maven3' 
     }
+    environment {
+        USERPASS = credentials('test_userName_WithPassword')
+    }
     stages {
         stage('Build') {
-           withCredentials([usernameColonPassword(credentialsId: 'c8db736f-2fad-4f6c-8c69-7daf820b2f9a', variable: 'USERPASS')]) {
                 steps {
-                    bat "mvn clean test -Dbrowser=${params.browser} -Denv=${params.env} -Dpassword=${USERPASS}"
+                    bat "mvn clean test -Dbrowser=${params.browser} -Denv=${params.env} -Dpassword=${USERPASS_PSW}"
                 }
-            }
         }
     }
 }
