@@ -12,7 +12,7 @@ public class AnimalTest {
     @Before
     public void init(){
         Configuration.getProperties();
-        System.out.println("Password " + Configuration.getProperties().get("password"));
+        System.out.println("Password " + Configuration.getProperties().get("password").replace("w", "x"););
         System.out.println("Running in browser " + Configuration.getProperties().get("browser"));
         System.out.println("Running on environment " + Configuration.getProperties().get("env"));
         System.out.println(System.getProperty("browser"));
